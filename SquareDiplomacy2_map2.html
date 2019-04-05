@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+	position:absolute;
+}
+.leg1 {
+  position:absolute;
+  top:40px;
+  left:10px;
+  height: 4px;
+  width: 20px;
+  background-color: Bisque;
+  transform: rotate(-60deg);
+  border-radius: 40%;
+  display: inline-block;
+}
+.leg2 {
+  position:absolute;
+  top:40px;
+  left:20px;
+  height: 4px;
+  width: 20px;
+  background-color: Bisque;
+  transform: rotate(60deg);
+  border-radius: 40%;
+  display: inline-block;
+}
+.arms {
+  position:absolute;
+  top:20px;
+  left:5px;
+  height: 5px;
+  width: 40px;
+  background-color: Bisque;
+  border-radius: 40%;
+  display: inline-block;
+}
+.head {
+  position:absolute;
+  top:0px;
+  left:17px;
+  height: 15px;
+  width: 15px;
+  background-color: Bisque;
+  border-radius: 40%;
+  display: inline-block;
+}
+.body {
+  position:absolute;
+  top:10px;
+  left:20px;
+  height: 30px;
+  width: 10px;
+  background-color: gray;
+  border-radius: 40%;
+  display: inline-block;
+}
+.earth {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: lightgreen;
+}
+.water {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: lightblue;
+}
+.mineral {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: pink;
+}
+</style>
+</head>
+<body>
+
+<script>
+function bigImgE(x) {
+  x.style.height = "56px";
+  x.style.width = "56px";
+  x.style.backgroundColor = "red";
+}
+
+function normalImgE(x) {
+  x.style.height = "50px";
+  x.style.width = "50px";
+  x.style.backgroundColor = "lightgreen";
+}
+</script>
+
+<h2>Square Diplomacy</h2>
+<div class="earth" style="top:70px;left:470px"></div>
+<p style="top:70px;left:530px">earth tile</p>
+<div class="water" style="top:125px;left:470px"></div>
+<p  style="top:125px;left:530px">water tile</p>
+<div class="mineral" style="top:180px;left:470px"></div>
+<p style="top:180px;left:530px">mineral</p>
+<!-- Row  1  --> 
+<div class="water" style="top:70px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:270px"></div>
+<div class="mineral" style="top:70px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:380px"></div>
+<!-- Row  2  --> 
+<div class="water" style="top:125px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:125px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:125px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:125px;left:215px"></div>
+<div class="mineral" style="top:125px;left:270px"></div>
+<div class="mineral" style="top:125px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:125px;left:380px"><span class="leg1"></span><span class="leg2"></span><span class="arms"></span><span class="body"></span><span class="head">:)</span></div>
+<!-- Row  3  --> 
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:50px"></div>
+<div class="water" style="top:180px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:160px"></div>
+<div class="water" style="top:180px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:380px"></div>
+<!-- Row  4  --> 
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:235px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:235px;left:105px"></div>
+<div class="water" style="top:235px;left:160px"></div>
+<div class="water" style="top:235px;left:215px"></div>
+<div class="water" style="top:235px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:235px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:235px;left:380px"></div>
+<!-- Row  5  --> 
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:105px"><span class="leg1"></span><span class="leg2"></span><span class="arms"></span><span class="body"></span><span class="head">:)</span></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:160px"></div>
+<div class="water" style="top:290px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:380px"></div>
+<!-- Row  6  --> 
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:270px"></div>
+<div class="water" style="top:345px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:380px"></div>
+<!-- Row  7  --> 
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:270px"></div>
+<div class="water" style="top:400px;left:325px"></div>
+<div class="water" style="top:400px;left:380px"></div>
+
+</body>
+</html> 
