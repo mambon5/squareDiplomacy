@@ -81,6 +81,9 @@ p {
 <body>
 
 <script>
+var selected = false;
+var prevtile="";
+
 function bigImgE(x) {
   x.style.height = "56px";
   x.style.width = "56px";
@@ -92,8 +95,30 @@ function normalImgE(x) {
   x.style.width = "50px";
   x.style.backgroundColor = "lightgreen";
 }
+
+function deletePers(x) {
+  prevtile=x;
+  x.innerHTML = '<span class="leg1"></span><span class="leg2"></span><span class="arms"></span><span class="body"></span><span class="head">:o</span>'; 
+  selected = true;
+}
+
+function appearPers(x) {
+  if(selected) {
+  x.innerHTML = '<span class="leg1"></span><span class="leg2"></span><span class="arms"></span><span class="body"></span><span class="head">:)</span>';
+  x.setAttribute('onclick','deletePers(this)');
+  prevtile.setAttribute('onclick','appearPers(this)');
+  prevtile.innerHTML ="";
+  selected=false; 
+  }
+}
+
+function echsel(txt = "") {
+   document.getElementById("echo").innerHTML = txt + ".selected=" + selected + ".";
+}
 </script>
 
+
+ <p id="echo" onclick="echsel()" style="left:700px" >echo</p>
 <h2>Square Diplomacy</h2>
 <div class="earth" style="top:70px;left:470px"></div>
 <p style="top:70px;left:530px">earth tile</p>
@@ -102,61 +127,61 @@ function normalImgE(x) {
 <div class="mineral" style="top:180px;left:470px"></div>
 <p style="top:180px;left:530px">mineral</p>
 <!-- Row  1  --> 
-<div class="water" style="top:70px;left:50px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:105px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:160px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:215px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:270px"></div>
-<div class="mineral" style="top:70px;left:325px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:70px;left:380px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:70px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:70px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:70px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:70px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:70px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:70px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:70px;left:380px"></div>
 <!-- Row  2  --> 
 <div class="water" style="top:125px;left:50px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:125px;left:105px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:125px;left:160px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:125px;left:215px"></div>
-<div class="mineral" style="top:125px;left:270px"></div>
-<div class="mineral" style="top:125px;left:325px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:125px;left:380px"><span class="leg1"></span><span class="leg2"></span><span class="arms"></span><span class="body"></span><span class="head">:)</span></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:125px;left:105px"></div>
+<div class="water" style="top:125px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:125px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="deletePers(this)" style="top:125px;left:270px"><span class="leg1"></span><span class="leg2"></span><span class="arms"></span><span class="body"></span><span class="head">:)</span></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:125px;left:325px"></div>
+<div class="mineral" style="top:125px;left:380px"></div>
 <!-- Row  3  --> 
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:180px;left:50px"></div>
 <div class="water" style="top:180px;left:105px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="deletePers(this)" style="top:180px;left:160px"><span class="leg1"></span><span class="leg2"></span><span class="arms"></span><span class="body"></span><span class="head">:)</span></div>
 <div class="water" style="top:180px;left:215px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:270px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:325px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:180px;left:380px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:180px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:180px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:180px;left:380px"></div>
 <!-- Row  4  --> 
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:235px;left:50px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:235px;left:105px"></div>
-<div class="water" style="top:235px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:235px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:235px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:235px;left:160px"></div>
 <div class="water" style="top:235px;left:215px"></div>
-<div class="water" style="top:235px;left:270px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:235px;left:325px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:235px;left:380px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:235px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:235px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:235px;left:380px"></div>
 <!-- Row  5  --> 
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:50px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:105px"><span class="leg1"></span><span class="leg2"></span><span class="arms"></span><span class="body"></span><span class="head">:)</span></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:290px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:290px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:290px;left:160px"></div>
 <div class="water" style="top:290px;left:215px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:270px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:325px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:290px;left:380px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:290px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:290px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:290px;left:380px"></div>
 <!-- Row  6  --> 
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:50px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:105px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:160px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:215px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:270px"></div>
-<div class="water" style="top:345px;left:325px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:345px;left:380px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:345px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:345px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:345px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:345px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:345px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:345px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:345px;left:380px"></div>
 <!-- Row  7  --> 
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:50px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:105px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:160px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:215px"></div>
-<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" style="top:400px;left:270px"></div>
-<div class="water" style="top:400px;left:325px"></div>
-<div class="water" style="top:400px;left:380px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:400px;left:50px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:400px;left:105px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:400px;left:160px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:400px;left:215px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:400px;left:270px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:400px;left:325px"></div>
+<div class="earth" onmouseover="bigImgE(this)" onmouseout="normalImgE(this)" onclick="appearPers(this)" style="top:400px;left:380px"></div>
 
 </body>
 </html> 
